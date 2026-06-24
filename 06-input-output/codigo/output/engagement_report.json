@@ -1,0 +1,28 @@
+{
+    "engagement": "Empresa S.A. — Reconocimiento Q2 2026",
+    "date": "2026-06-24",
+    "total_findings": 3,
+    "findings": [
+        {
+            "host": "192.168.1.10",
+            "port": 445,
+            "service": "smb",
+            "cve": "CVE-2020-1472",
+            "cvss": 10.0
+        },
+        {
+            "host": "192.168.1.12",
+            "port": 443,
+            "service": "https",
+            "cve": "CVE-2021-41773",
+            "cvss": 9.8
+        },
+        {
+            "host": "10.10.10.5",
+            "port": 8080,
+            "service": "http",
+            "cve": "CVE-2022-26134",
+            "cvss": 7.5
+        }
+    ]
+}

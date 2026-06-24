@@ -1,0 +1,6 @@
+[CRÍTICO] CVE-2020-1472 — ZeroLogon en 192.168.1.10
+[ALTO]    CVE-2021-41773 — Path Traversal en 192.168.1.12
+[MEDIO]   CVE-2022-26134 — OGNL Injection en 10.10.10.5
+[CRÍTICO] CVE-2020-1472 — ZeroLogon en 192.168.1.10
+[ALTO]    CVE-2021-41773 — Path Traversal en 192.168.1.12
+[MEDIO]   CVE-2022-26134 — OGNL Injection en 10.10.10.5
