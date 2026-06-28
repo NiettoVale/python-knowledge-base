@@ -1,0 +1,15 @@
+admin
+login
+dashboard
+uploads
+backup
+config
+api
+v1
+users
+test
+dev
+.git
+.env
+wp-admin
+phpmyadmin
