@@ -27,5 +27,5 @@ dependencies = [
 ]
 
 [project.scripts]
-mach-changer = "mac_changer.interface.cli:app"
+mac-changer = "mac_changer.interface.cli:app"
 
