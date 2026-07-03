@@ -4,6 +4,8 @@
 import os
 from types import FrameType
 
+from network_scanner.utils.console import console
+
 
 def def_handler(sig: int, frame: FrameType | None) -> None:
     """Handler de SIGINT (Ctrl+C) que corta el programa de forma inmediata.
@@ -18,5 +20,5 @@ def def_handler(sig: int, frame: FrameType | None) -> None:
         sig: Numero de la señal recibida (siempre `SIGINT` en este caso).
         frame: Frame de ejecucion actual al momento de la interrupcion.
     """
-    print("\n[!] Saliendo del programa...\n")
+    console.print("\n[bold red][!] Saliendo del programa...[/bold red]\n")
     os._exit(1)

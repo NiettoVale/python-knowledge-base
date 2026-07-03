@@ -8,12 +8,12 @@ lo expande en una lista de IPs segun su tipo y dispara el ping sweep.
 import signal
 
 import typer
+from rich.panel import Panel
 
 from network_scanner.core import ping_sweep, unpack_ip_range, unpack_ip_subnet
-from network_scanner.utils import def_handler, validate_target
+from network_scanner.utils import console, def_handler, validate_target
 
 app = typer.Typer()
-
 signal.signal(signal.SIGINT, def_handler)
 
 
@@ -32,9 +32,15 @@ def main(
     ),
 ) -> None:
     """Escanea un target de red (IP, rango o subred) mediante ping sweep."""
-    # Nota: este docstring aparece tal cual en `--help` (Typer lo usa como
-    # descripcion del comando), por eso se mantiene corto y de cara al
-    # usuario final en vez de usar formato de docstring tipo Google/Args.
+
+    console.print(
+        Panel(
+            "[bold cyan]Network Scanner[/bold cyan] — Escaner de hosts activos.",
+            border_style="cyan",
+            expand=False,
+        )
+    )
+
     is_valid, type = validate_target(target)
 
     if is_valid:
@@ -47,7 +53,7 @@ def main(
             targets = unpack_ip_subnet(target)
             ping_sweep(targets)
     else:
-        print("[!] No se pudo determinar que ingreso.")
+        console.print("[bold red][!] No se pudo determinar que ingreso.[/bold red]")
 
 
 if __name__ == "__main__":
