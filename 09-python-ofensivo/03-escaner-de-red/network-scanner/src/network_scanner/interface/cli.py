@@ -1,10 +1,15 @@
 #!/usr/bin/env python3
 
+import signal
+
 import typer
 
-from network_scanner.utils import validate_target
+from network_scanner.core import ping_sweep, unpack_ip_range, unpack_ip_subnet
+from network_scanner.utils import def_handler, validate_target
 
 app = typer.Typer()
+
+signal.signal(signal.SIGINT, def_handler)
 
 
 @app.command()
@@ -25,11 +30,13 @@ def main(
 
     if is_valid:
         if type == "ip":
-            print(f"[+] La IP ({target}) es valida.")
+            ping_sweep([target])
         elif type == "range":
-            print(f"[+] El rango ingresado ({target}) es valido.")
+            targets = unpack_ip_range(target)
+            ping_sweep(targets)
         elif type == "subnet":
-            print(f"[+] La Subnet ingresada ({target}) es valida.")
+            targets = unpack_ip_subnet(target)
+            ping_sweep(targets)
     else:
         print("[!] No se pudo determinar que ingreso.")
 
