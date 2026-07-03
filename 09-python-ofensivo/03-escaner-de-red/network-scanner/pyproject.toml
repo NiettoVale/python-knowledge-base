@@ -5,7 +5,7 @@ build-backend = "hatchling.build"
 [project]
 name = "network-scanner"
 version = "0.0.1"
-description = ""
+description = "Escaner de red simple en Python que descubre hosts activos mediante ping sweep, soportando IP unica, rangos y subredes CIDR."
 readme = "README.md"
 requires-python = ">=3.10"
 license = {text = "MIT"}
