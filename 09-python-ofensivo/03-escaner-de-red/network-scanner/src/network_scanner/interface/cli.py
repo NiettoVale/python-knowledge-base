@@ -1,4 +1,9 @@
 #!/usr/bin/env python3
+"""Interfaz de linea de comandos (CLI) del network-scanner.
+
+Punto de entrada del programa: recibe el target por argumento, lo valida,
+lo expande en una lista de IPs segun su tipo y dispara el ping sweep.
+"""
 
 import signal
 
@@ -25,7 +30,11 @@ def main(
             "  - Rango: 192.168.0.1-100\n"
         ),
     ),
-):
+) -> None:
+    """Escanea un target de red (IP, rango o subred) mediante ping sweep."""
+    # Nota: este docstring aparece tal cual en `--help` (Typer lo usa como
+    # descripcion del comando), por eso se mantiene corto y de cara al
+    # usuario final en vez de usar formato de docstring tipo Google/Args.
     is_valid, type = validate_target(target)
 
     if is_valid:
