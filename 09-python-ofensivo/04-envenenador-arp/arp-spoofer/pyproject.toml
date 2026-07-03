@@ -19,7 +19,8 @@ keywords = [
 
 dependencies = [
     "typer>=0.16",
-    "rich>=14.0"
+    "rich>=14.0",
+    "scapy>=2.7"
 ]
 
 [project.optional-dependencies]
